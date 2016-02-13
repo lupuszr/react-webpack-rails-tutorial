@@ -44,7 +44,8 @@
         </ul>
       </div><!-- /.navbar-collapse -->
     <% else %>
-      <%= react_component('Header', render(template: "/comments/index.json.jbuilder"),
+      <%= redux_store("commentsStore", render(template: "/comments/index.json.jbuilder")) %>
+      <%= react_component('Header',
     prerender: true, raise_on_prerender_error: true) %>
     <% end %>
   </div><!-- /.container-fluid -->

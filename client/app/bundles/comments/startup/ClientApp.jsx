@@ -1,11 +1,12 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 
-import createStore from '../store/commentsStore';
+import commentsStore from '../store/commentsStore';
 import NonRouterCommentsContainer from '../containers/NonRouterCommentsContainer';
 
 export default props => {
-  const store = createStore(props);
+  const store = ReactOnRails.getStore('commentsStore');
+
   return (
       <Provider store={store}>
         <NonRouterCommentsContainer />

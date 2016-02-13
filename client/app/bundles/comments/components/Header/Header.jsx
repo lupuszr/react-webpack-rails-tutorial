@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import css from './Header.scss';
 
 import BaseComponent from 'libs/components/BaseComponent';
 
@@ -16,7 +17,6 @@ export default class Header extends BaseComponent {
 
   render() {
     const { actions, data } = this.props;
-    console.log(data.get('$$comments').size)
     return (
       <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul className="nav navbar-nav">
@@ -27,7 +27,7 @@ export default class Header extends BaseComponent {
           <li><a href="https://github.com/shakacode/react-webpack-rails-tutorial">Source on Github</a></li>
           <li><a href="http://www.railsonmaui.com/blog/2014/10/03/integrating-webpack-and-the-es6-transpiler-into-an-existing-rails-project/">Tutorial Article</a></li>
           <li><a href="http://forum.shakacode.com/t/fast-rich-client-rails-development-with-webpack-and-the-es6-transpiler/82/22">Forum Discussion</a></li>
-          <li>{data.get('$$comments').size}</li>
+          <li className={css.counter}>{data.get('$$comments').size}</li>
         </ul>
       </div>
     );
